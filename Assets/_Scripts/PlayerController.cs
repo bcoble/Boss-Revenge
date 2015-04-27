@@ -11,12 +11,16 @@ public class PlayerController : MonoBehaviour
 	private float moveVertical;
 	private float yAxis;
 	private Vector3 movement;
-	//private bool alive;
+	private bool alive;
 	private int t;
+	private GameObject house;
+	private HouseScript healthScript;
 	//private int numOfEnemies = 5;
-
+	
 	void Start ()
 	{
+		house = GameObject.Find("House");
+		healthScript = (HouseScript)house.GetComponent (typeof(HouseScript));
 		rb = GetComponent<Rigidbody> ();
 		moveHorizontal = -60;
 		moveVertical = -4.5f;
@@ -25,7 +29,7 @@ public class PlayerController : MonoBehaviour
 		GetComponent<Rigidbody> ().position = movement;
 		t = 0;
 	}
-
+	
 	void FixedUpdate ()
 	{
 		movementOnPath ();
@@ -33,16 +37,16 @@ public class PlayerController : MonoBehaviour
 			addNewEnemy ();
 		}
 		t++;
-
+		
 	}
-
-	void addNewEnemy(){
-
-		GameObject player1 = Instantiate(GameObject.Find ("Player"), new Vector3 (-60, 7, -4.5f), transform.rotation) as GameObject;
 	
+	void addNewEnemy(){
+		
+		GameObject player1 = Instantiate(GameObject.Find ("Player"), new Vector3 (-60, 7, -4.5f), transform.rotation) as GameObject;
+		//player1.tag = "Enemy";
 		player1.gameObject.SetActive (true);
 	}
-
+	
 	void movementOnPath ()
 	{
 		if (moveHorizontal < 15 && moveVertical == -4.5f) {
@@ -126,7 +130,8 @@ public class PlayerController : MonoBehaviour
 			moveHorizontal+= 1;
 			movement = new Vector3 (moveHorizontal, yAxis, moveVertical);
 			GetComponent<Rigidbody> ().position = movement;
+			healthScript.healthdec();
 		}
 	}
-
+	
 }
