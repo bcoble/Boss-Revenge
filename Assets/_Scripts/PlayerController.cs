@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
 	private Rigidbody rb;
 	public GameObject player;
+	public GameObject player1=null;
 	//public float speed;
 	private float moveHorizontal;
 	private float moveVertical;
@@ -36,12 +37,10 @@ public class PlayerController : MonoBehaviour
 	}
 
 	void addNewEnemy(){
-		player = GameObject.CreatePrimitive (PrimitiveType.Sphere);
-		player.transform.position = new Vector3 (-60, 7, -4.5f);
-		player.AddComponent<Rigidbody> ();
-		player.AddComponent<PlayerController> ();
-		player.transform.localScale = new Vector3 (10, 10, 10);
-		player.gameObject.SetActive (true);
+
+		GameObject player1 = Instantiate(GameObject.Find ("Player"), new Vector3 (-60, 7, -4.5f), transform.rotation) as GameObject;
+	
+		player1.gameObject.SetActive (true);
 	}
 
 	void movementOnPath ()

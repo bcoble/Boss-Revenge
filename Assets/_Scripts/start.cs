@@ -18,7 +18,7 @@ public class start : MonoBehaviour {
 		GUI.Window (0, new Rect (300, 0, 200, 400), SideBarButtons, "Menu");
 	}
 
-	void SideBarButtons(){
+	void SideBarButtons(int windowID){
 		if (GUI.Button (new Rect (10, 30, 80, 20), "Menu")) {
 			print("menu");
 		}
