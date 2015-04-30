@@ -27,7 +27,11 @@ public class start : MonoBehaviour {
 	void OnGUI(){
 		GUI.backgroundColor = Color.black;
 		GUI.Window (0, new Rect (450, 0, 200, 450), SideBarButtons, "Menu");
-		
+		if (health == 0) {
+			GUI.Window (0, new Rect (190, 200, 200, 60), GameOver, "Game Over");
+			
+		}
+
 	}
 	
 	void SideBarButtons(int windowID){
@@ -47,6 +51,17 @@ public class start : MonoBehaviour {
 		
 	}
 	
+
+	void GameOver(int windowID) {
+		if (GUI.Button (new Rect (10, 30, 80, 20), "Restart!")) {
+			print ("restart");
+			Application.LoadLevel(0);
+		}
+		if (GUI.Button (new Rect (100, 30, 80, 20), "Quit!")) {
+			print ("quit");
+			Application.Quit ();
+		}
+	}
 	
 	
 	

@@ -15,10 +15,12 @@ public class PlayerController : MonoBehaviour
 	private int t;
 	private GameObject house;
 	private HouseScript healthScript;
+	private bool atHouse;
 	//private int numOfEnemies = 5;
 	
 	void Start ()
 	{
+		atHouse = true;
 		house = GameObject.Find("House");
 		healthScript = (HouseScript)house.GetComponent (typeof(HouseScript));
 		rb = GetComponent<Rigidbody> ();
@@ -39,17 +41,19 @@ public class PlayerController : MonoBehaviour
 		t++;
 		
 	}
-	
+
+
+
 	void addNewEnemy(){
 		
 		GameObject player1 = Instantiate(GameObject.Find ("Player"), new Vector3 (-60, 7, -4.5f), transform.rotation) as GameObject;
-		//player1.tag = "Enemy";
 		player1.gameObject.SetActive (true);
 	}
 	
 	void movementOnPath ()
 	{
 		if (moveHorizontal < 15 && moveVertical == -4.5f) {
+			//atHouse = true;
 			moveHorizontal += 0.5f;
 			movement = new Vector3 (moveHorizontal, yAxis, moveVertical);
 			GetComponent<Rigidbody> ().position = movement;
@@ -127,10 +131,14 @@ public class PlayerController : MonoBehaviour
 			GetComponent<Rigidbody> ().position = movement;
 			//print ("13");
 		} else {
+			if(atHouse){
+				healthScript.healthdec();
+				atHouse = false;
+			}
 			moveHorizontal+= 1;
 			movement = new Vector3 (moveHorizontal, yAxis, moveVertical);
 			GetComponent<Rigidbody> ().position = movement;
-			healthScript.healthdec();
+
 		}
 	}
 	
