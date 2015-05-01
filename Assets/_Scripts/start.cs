@@ -6,12 +6,16 @@ public class start : MonoBehaviour {
 	private GameObject house;
 	private int health;
 	private HouseScript healthScript;
+	private GameObject player;
+	private PlayerController playerScript; 
 	// Use this for initialization
 	
 	void Start () {
 		house = GameObject.Find("House");
 		healthScript = (HouseScript)house.GetComponent (typeof(HouseScript));
 		health = healthScript.getHealth ();
+		player = GameObject.Find ("Player");
+		playerScript = (PlayerController)player.GetComponent (typeof(PlayerController));
 		gold = 200;
 	}
 	
@@ -26,11 +30,12 @@ public class start : MonoBehaviour {
 	
 	void OnGUI(){
 		GUI.backgroundColor = Color.black;
-		GUI.Window (0, new Rect (450, 0, 200, 450), SideBarButtons, "Menu");
+		GUI.Window (0, new Rect (450, 0, 220, 450), SideBarButtons, "Menu");
 		if (health == 0) {
 			GUI.Window (0, new Rect (190, 200, 200, 60), GameOver, "Game Over");
 			
 		}
+		GUI.Window (1, new Rect (0, 0, 450, 50), WaveButtons, "Waves");
 
 	}
 	
@@ -38,9 +43,9 @@ public class start : MonoBehaviour {
 		GUI.TextField (new Rect (10, 20, 150 , 20), "Health Points " + health);
 		GUI.TextField (new Rect (10, 50, 150, 20), "Gold Available " + gold);
 		
-		GUI.TextArea(new Rect (10, 150, 150, 200), "Information");
+		GUI.TextArea(new Rect (10, 130, 180, 250), "Information");
 		
-		if (GUI.Button (new Rect (60, 100, 80, 20), "Build")) {
+		if (GUI.Button (new Rect (60, 90, 80, 20), "Build")) {
 			print("build");
 		}
 		
@@ -62,7 +67,23 @@ public class start : MonoBehaviour {
 			Application.Quit ();
 		}
 	}
-	
+	void WaveButtons(int windowID){
+		if (GUI.Button (new Rect (0, 30, 80, 20), "Wave 1")) {
+			playerScript.waveSelector(1);
+		}
+		if (GUI.Button (new Rect (80, 30, 80, 20), "Wave 2")) {
+			playerScript.waveSelector(2);
+		}
+		if (GUI.Button (new Rect (160, 30, 80, 20), "Wave 3")) {
+			playerScript.waveSelector(3);
+		}
+		if (GUI.Button (new Rect (240, 30, 80, 20), "Wave 4")) {
+			playerScript.waveSelector(4);
+		}
+		if (GUI.Button (new Rect (320, 30, 80, 20), "Wave 5")) {
+			playerScript.waveSelector(5);
+		}
+	}
 	
 	
 }

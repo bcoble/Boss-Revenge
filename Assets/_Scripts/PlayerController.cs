@@ -16,10 +16,22 @@ public class PlayerController : MonoBehaviour
 	private GameObject house;
 	private HouseScript healthScript;
 	private bool atHouse;
-	//private int numOfEnemies = 5;
+	private GameObject[] wave1;
+	private GameObject[] wave2;
+	private GameObject[] wave3;
+	private GameObject[] wave4;
+	private GameObject[] wave5;
+	private bool waveSelected;
+	private int numOfEnemies = 10;
 	
 	void Start ()
 	{
+		waveSelected = false;
+		wave1 = new GameObject[numOfEnemies];
+		wave2 = new GameObject[numOfEnemies*2];
+		wave3 = new GameObject[numOfEnemies*3];
+		wave4 = new GameObject[numOfEnemies*4];
+		wave5 = new GameObject[numOfEnemies*5];
 		atHouse = true;
 		house = GameObject.Find("House");
 		healthScript = (HouseScript)house.GetComponent (typeof(HouseScript));
@@ -34,12 +46,13 @@ public class PlayerController : MonoBehaviour
 	
 	void FixedUpdate ()
 	{
+
 		movementOnPath ();
 		if (t == 100) {
 			addNewEnemy ();
 		}
 		t++;
-		
+	
 	}
 
 
@@ -138,6 +151,39 @@ public class PlayerController : MonoBehaviour
 			moveHorizontal+= 1;
 			movement = new Vector3 (moveHorizontal, yAxis, moveVertical);
 			GetComponent<Rigidbody> ().position = movement;
+
+		}
+	}
+	public void waveSelector(int wave){
+		waveSelected = true;
+		if (wave == 1) {
+			print ("wave 1");
+			play (wave1,numOfEnemies * wave);
+		}else if(wave == 2){
+			print ("wave 1 and 2");
+			play (wave2,numOfEnemies * wave);
+		}else if(wave == 3){
+			print ("wave 1 and 2 and 3");
+			play (wave3,numOfEnemies * wave);
+		}else if(wave == 4){
+			print ("wave 1 and 2 and 3 and 4");
+			play (wave4,numOfEnemies * wave);
+		}else if(wave == 5){
+			print ("wave 1 and 2 and 3 and 4 and 5");
+			play (wave5,numOfEnemies * wave);
+		}
+	
+	}
+	void play(GameObject[] wave,int numberOfEnemies){
+		if (waveSelected) {
+			GameObject selector;
+			for (int i = 0; i < numberOfEnemies; i++) {
+				GameObject go = Instantiate(GameObject.Find ("Player"), new Vector3 (-60, 7, -4.5f), transform.rotation) as GameObject;
+				wave [i] = go;
+				wave[i].gameObject.SetActive (true);
+				movementOnPath();
+				wave[i].transform.position = new Vector3 (moveHorizontal, yAxis, moveVertical);
+			}
 
 		}
 	}

@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\start.cs">
     <Files>
-      <File FileName="Assets\_Scripts\HouseScript.cs" Line="41" Column="4" />
-      <File FileName="Assets\_Scripts\PlayerController.cs" Line="49" Column="127" />
-      <File FileName="Assets\_Scripts\start.cs" Line="30" Column="16" />
+      <File FileName="Assets\_Scripts\start.cs" Line="48" Column="35" />
+      <File FileName="Assets\_Scripts\HouseScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\PlayerController.cs" Line="164" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
