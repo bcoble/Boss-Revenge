@@ -7,10 +7,12 @@ public class start : MonoBehaviour {
 	private int health;
 	private HouseScript healthScript;
 	private GameObject player;
-	private PlayerController playerScript; 
+	private PlayerController playerScript;
+	private int currentLevel;
 	// Use this for initialization
 	
 	void Start () {
+		currentLevel = 0;
 		house = GameObject.Find("House");
 		healthScript = (HouseScript)house.GetComponent (typeof(HouseScript));
 		health = healthScript.getHealth ();
@@ -32,8 +34,11 @@ public class start : MonoBehaviour {
 		GUI.backgroundColor = Color.black;
 		GUI.Window (0, new Rect (450, 0, 220, 450), SideBarButtons, "Menu");
 		if (health == 0) {
-			GUI.Window (0, new Rect (190, 200, 200, 60), GameOver, "Game Over");
+			GUI.Window (2, new Rect (190, 200, 200, 60), GameOver, "Game Over");
 			
+		}
+		if (playerScript.finalWaveCompleted) {
+			GUI.Window (3, new Rect (190, 200, 200, 60), newLevel, "Level" +currentLevel+ " Finished");
 		}
 		GUI.Window (1, new Rect (0, 0, 450, 50), WaveButtons, "Waves");
 
@@ -55,12 +60,19 @@ public class start : MonoBehaviour {
 		
 		
 	}
-	
+
+	void newLevel(int windowID){
+		if (GUI.Button (new Rect (10, 30, 80, 20), "Next Level!")) {
+			print ("new level");
+			currentLevel += 1;
+			Application.LoadLevel(currentLevel);
+		}
+	}
 
 	void GameOver(int windowID) {
 		if (GUI.Button (new Rect (10, 30, 80, 20), "Restart!")) {
 			print ("restart");
-			Application.LoadLevel(0);
+			Application.LoadLevel(currentLevel);
 		}
 		if (GUI.Button (new Rect (100, 30, 80, 20), "Quit!")) {
 			print ("quit");
