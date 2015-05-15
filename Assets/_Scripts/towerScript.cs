@@ -5,7 +5,7 @@ using System;
 
 public class towerScript : MonoBehaviour {
 
-	public Rigidbody2D bullet;
+	public GameObject bullet;
 	public GameObject target;
 	public int targetAquisitionDelay;
 	public int bulletSpeed;
@@ -14,7 +14,7 @@ public class towerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		targetAquisitionDelay = 30;
-		bulletSpeed = 6;
+		bulletSpeed = 10;
 		count = 0;
 		target = null;
 	}
@@ -25,18 +25,7 @@ public class towerScript : MonoBehaviour {
 		GameObject g;
 		//Rigidbody2D clone;
 		
-		if (Input.GetKeyDown("space")) {
-	        //t = (Transform) Instantiate(bullet, transform.position, Quaternion.identity);
-	        //g = t.gameObject;
-	        //clone = g.GetComponent<Rigidbody2D>();
-
-	        g = (GameObject) Instantiate(bullet, transform.position, Quaternion.identity);
-	        g.tag = "Projectile";
-	        g.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed, g.GetComponent<Rigidbody2D>().velocity.y);
-
-
-	        //clone.velocity = new Vector2(bulletSpeed, clone.velocity.y);
-	    }
+		
 	    //print(count);
 	    if(count < targetAquisitionDelay){
 	    	count++;
@@ -48,6 +37,7 @@ public class towerScript : MonoBehaviour {
 				print("Found target");
 			} else { // shoot at target
 				print("Current Target " + target.tag);
+				// check if target is too far away - TODO
 				ShootProjectile(target);
 				target = null;
 			}
@@ -74,20 +64,26 @@ public class towerScript : MonoBehaviour {
 
 	// Shoots a projectile at a target
 	void ShootProjectile(GameObject t){
-		GameObject g;
 
 		var diffX = t.transform.position.x - transform.position.x;
 		var diffY = t.transform.position.y - transform.position.y;
-		var angle = Mathf.Atan2(diffY, diffX);
+		var diffZ = t.transform.position.z - transform.position.z;
+		
+		var angle = Mathf.Atan2(diffZ, diffX);
 
 		print("Firing");
+		//print(diffZ);
+		//print(diffY);
+		GameObject g;
 
-        g = (GameObject) Instantiate(bullet, transform.position, Quaternion.identity);
-        //g.transform.LookAt(t.transform);
+        g = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;
+
         g.tag = "Projectile";
-        g.transform.Rotate(Vector3.forward * angle);
-        g.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed*diffX, bulletSpeed*diffY);
-        //g.GetComponent<Rigidbody2D>().AddForce(Vector2.one * bulletSpeed);
+        g.transform.LookAt(t.transform);
+        g.transform.rotation = Quaternion.Euler(90, 0, 0);
+        
+        //g.transform.Rotate(Vector3.forward * angle); //- fix this
+        g.GetComponent<Rigidbody>().velocity = new Vector3(bulletSpeed*diffX, bulletSpeed*diffZ, 1);
 	}
 
 	int ByDistance(GameObject a, GameObject b){

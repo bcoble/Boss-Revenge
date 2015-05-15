@@ -246,4 +246,23 @@ public class PlayerController : MonoBehaviour
 			finalWaveCompleted = true;
 		}
 	}
+
+	void OnTriggerEnter(Collider obj) {
+		var name = obj.gameObject.name;
+	    var tag = obj.gameObject.tag;
+
+	    // If it collided with a bullet
+	    if (name == "bullet(Clone)") {
+	        // Destroy itself (the enemy)
+	        Destroy(gameObject);
+
+	        // And destroy the bullet
+	        Destroy(obj.gameObject);
+	    }
+
+	 	if (tag == "Projectile"){
+	 		Destroy(gameObject);
+	 		Destroy(obj.gameObject);
+	 	}
+	}
 }

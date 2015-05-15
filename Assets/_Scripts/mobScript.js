@@ -15,13 +15,13 @@ function OnTriggerEnter2D(obj : Collider2D) {
 
 
     // If it collided with a bullet
-    if (name == "bullet(Clone)") {
-        // Destroy itself (the enemy)
-        Destroy(gameObject);
+    // if (name == "bullet(Clone)") {
+    //     // Destroy itself (the enemy)
+    //     Destroy(gameObject);
 
-        // And destroy the bullet
-        Destroy(obj.gameObject);
-    }
+    //     // And destroy the bullet
+    //     Destroy(obj.gameObject);
+    // }
 
  	if (tag == "Projectile"){
  		Destroy(gameObject);
