@@ -1,0 +1,126 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class PlayerController : MonoBehaviour
+{
+	public GameObject enemy;
+	private bool waveSelected;
+	private int numOfEnemies = 10;
+	private bool wave1;
+	private bool wave2;
+	private bool wave3;
+	private bool wave4;
+	private bool wave5;
+	public bool finalWaveCompleted;
+	private int totalEnemies;
+
+
+	
+	public void Start ()
+	{
+		totalEnemies = 50;
+		waveSelected = false;
+		wave1 = false;
+		wave2 = false;
+		wave3 = false;
+		wave4 = false;
+		wave5 = false;
+		finalWaveCompleted = false;
+
+
+	}
+	
+	void Update ()
+	{
+		checkingEnemies ();	
+	}
+	
+	
+	
+	void addNewEnemy(){
+	
+		GameObject e = Instantiate (enemy, transform.position, transform.rotation) as GameObject;
+		e.gameObject.SetActive (true);
+		e.transform.rotation = Quaternion.Euler(90, 0, 0);
+	
+	}
+	
+
+	public void waveSelector(int wave){
+		waveSelected = true;
+
+		if (wave == 1 && !wave1) {
+			wave1 =true;
+			StartCoroutine(play(1*numOfEnemies));
+		}else if(wave == 2 && !wave2){
+			wave1 = true;
+			wave2 = true;
+			if(!wave1){
+				StartCoroutine( play (2*numOfEnemies));
+			}else{
+				StartCoroutine( play (1*numOfEnemies));
+			}
+		}else if(wave == 3 && !wave3){
+			wave1 =true;
+			wave2 = true;
+			wave3 = true;
+			if(!wave1){
+				StartCoroutine( play (3*numOfEnemies));
+			}else if(!wave1 && !wave2){
+				StartCoroutine( play (2*numOfEnemies));
+			}else{
+				StartCoroutine( play (1*numOfEnemies));
+			}
+		}else if(wave == 4 && !wave4){
+			wave4 = true;
+			wave1 = true;
+			wave2 = true;
+			wave3 = true;
+			if(!wave1){
+				StartCoroutine( play (4*numOfEnemies));
+			}else if(!wave1 && !wave2){
+				StartCoroutine( play (3*numOfEnemies));
+			}else if(!wave1 && !wave2 && !wave3){
+				StartCoroutine( play(2*numOfEnemies));
+			}else{
+				StartCoroutine( play (1*numOfEnemies));
+			}
+		}else if(wave == 5 && !wave5){
+			wave5 = true;
+			wave4 = true;
+			wave1 = true;
+			wave2 = true;
+			wave3 = true;
+
+			if(!wave1){
+				StartCoroutine( play (5*numOfEnemies));
+			}else if(!wave1 && !wave2){
+				StartCoroutine( play (4*numOfEnemies));
+			}else if(!wave1 && !wave2 && !wave3){
+				StartCoroutine( play(3*numOfEnemies));
+			}else if(!wave1 && !wave2 && !wave3 && !wave4){
+				StartCoroutine( play(2*numOfEnemies));
+			}else{
+				StartCoroutine( play (1*numOfEnemies));
+			}
+		}
+		
+	}
+	IEnumerator play(int numberOfEnemies){
+		if (waveSelected) {
+			for (int i = 0; i < numberOfEnemies; i++) {
+				addNewEnemy();
+				yield return new WaitForSeconds(5);
+			}
+			
+		}
+	}
+	public void deleteEnemy(){
+		totalEnemies -= 1;
+	}
+	void checkingEnemies(){
+		if (numOfEnemies == 0) {
+			finalWaveCompleted = true;
+		}
+	}
+}

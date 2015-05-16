@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: 662b55b934d3e0e40a197384da87d212
+timeCreated: 1431806396
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - enemy: {fileID: 164786, guid: a4f7c7561fe6b5140871acb9e2b7aad2, type: 2}
+  - way1: {fileID: 185258, guid: bb1d480ec4e141741a7fb44143c92122, type: 2}
+  - way2: {fileID: 136174, guid: cb1c4a91db5306249972c53da8af75df, type: 2}
+  - way3: {fileID: 128606, guid: b98da319767475a4cbf2c7f91fcb9a5e, type: 2}
+  - way4: {fileID: 142168, guid: 682320b6cb98b694e9af0c2d380dc337, type: 2}
+  - way5: {fileID: 126594, guid: a9a1bfe2622cabd49869eb289f01d8a7, type: 2}
+  - way6: {fileID: 119446, guid: a7cf0d178e3c5f444a274664b56405ae, type: 2}
+  - way7: {fileID: 145908, guid: c3eb4dc0852d13d4b83131db498cb2fc, type: 2}
+  - way8: {fileID: 150644, guid: 1dbe0f658205c4f468efd279ee6ed494, type: 2}
+  - way9: {fileID: 182080, guid: eafc22e47cec5604ca60c0cb8c2741f1, type: 2}
+  - way10: {fileID: 188400, guid: 44798907a70bdce49aa5e571b4c8d8f1, type: 2}
+  - way11: {fileID: 171022, guid: 97603b23e27d15e43a68cab8ffc3d8bb, type: 2}
+  - way12: {fileID: 155106, guid: a8ebf0faa039de34bb339c2bb3ba4175, type: 2}
+  - way13: {fileID: 167858, guid: b9c5326ae63c6a04dbe5c6104758465a, type: 2}
+  - way14: {fileID: 168182, guid: f03e52324f63b4c408edd652595abd51, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
