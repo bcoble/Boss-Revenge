@@ -123,4 +123,12 @@ public class PlayerController : MonoBehaviour
 			finalWaveCompleted = true;
 		}
 	}
+	void OnTriggerEnter(Collider obj){
+		var name = obj.gameObject.name;
+		var tag = obj.gameObject.tag;
+		if (tag == "Projectile") {
+			Destroy(gameObject);
+			Destroy(obj.gameObject);
+		}
+	}
 }

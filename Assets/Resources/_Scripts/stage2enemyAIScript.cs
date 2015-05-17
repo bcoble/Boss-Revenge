@@ -217,7 +217,7 @@ public class stage2enemyAIScript : MonoBehaviour {
 			z++; 
 			enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 			print (distance);
-			if (distance <= 3) {
+			if (distance <= 5) {
 				state = State.Idle;
 			}
 	}
