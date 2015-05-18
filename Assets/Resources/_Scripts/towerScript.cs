@@ -35,9 +35,9 @@ public class towerScript : MonoBehaviour {
 			// locate enemies
 			if (target == null){ // get target
 				target = getTarget();
-				print("Found target");
+				//print("Found target");
 			} else { // shoot at target
-				print("Current Target " + target.tag);
+				//print("Current Target " + target.tag);
 				// check if target is too far away - TODO
 				ShootProjectile(target);
 				target = null;
@@ -81,13 +81,13 @@ public class towerScript : MonoBehaviour {
 	// Shoots a projectile at a target
 	void ShootProjectile(GameObject t){
 		
-		var diffX = t.transform.position.x - transform.position.x;
-		var diffY = t.transform.position.y - transform.position.y;
-		var diffZ = t.transform.position.z - transform.position.z;
+		//var diffX = t.transform.position.x - transform.position.x;
+		//var diffY = t.transform.position.y - transform.position.y;
+		//var diffZ = t.transform.position.z - transform.position.z;
 		
-		var angle = Mathf.Atan2(diffZ, diffX);
+		//var angle = Mathf.Atan2(diffZ, diffX);
 		
-		print("Firing");
+		//print("Firing");
 		//print(diffZ);
 		//print(diffY);
 		GameObject g;

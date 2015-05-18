@@ -2,7 +2,11 @@
 using System.Collections;
 
 public class start : MonoBehaviour {
+<<<<<<< HEAD
 	public int gold;
+=======
+	public static int gold;
+>>>>>>> origin/master
 	public static PlayerController playerScript;
 	public PlayerController script;
 	private GameObject house;
@@ -66,6 +70,10 @@ public class start : MonoBehaviour {
 			print ("new level");
 			currentLevel += 1;
 			Application.LoadLevel(currentLevel);
+		}
+		if (GUI.Button (new Rect (100, 30, 80, 20), "Menu")) {
+			print ("menu");
+
 		}
 	}
 

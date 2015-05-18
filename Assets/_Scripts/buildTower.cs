@@ -22,6 +22,7 @@ public class buildTower : MonoBehaviour {
 				obj.SetActive(true);
 				global.gold-=50;
 				build=false;
+				start.gold -= 100;
 			}
 		}
 	}

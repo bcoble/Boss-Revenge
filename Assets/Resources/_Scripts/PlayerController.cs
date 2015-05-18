@@ -53,56 +53,58 @@ public class PlayerController : MonoBehaviour
 			wave1 =true;
 			StartCoroutine(play(1*numOfEnemies));
 		}else if(wave == 2 && !wave2){
-			wave1 = true;
-			wave2 = true;
+
 			if(!wave1){
 				StartCoroutine( play (2*numOfEnemies));
 			}else{
 				StartCoroutine( play (1*numOfEnemies));
 			}
+			wave1 = true;
+			wave2 = true;
 		}else if(wave == 3 && !wave3){
+
+			if(!wave1){
+				StartCoroutine( play (3*numOfEnemies));
+			}else if(!wave2){
+				StartCoroutine( play (2*numOfEnemies));
+			}else{
+				StartCoroutine( play (1*numOfEnemies));
+			}
 			wave1 =true;
 			wave2 = true;
 			wave3 = true;
-			if(!wave1){
-				StartCoroutine( play (3*numOfEnemies));
-			}else if(!wave1 && !wave2){
-				StartCoroutine( play (2*numOfEnemies));
-			}else{
-				StartCoroutine( play (1*numOfEnemies));
-			}
 		}else if(wave == 4 && !wave4){
-			wave4 = true;
-			wave1 = true;
-			wave2 = true;
-			wave3 = true;
+
 			if(!wave1){
 				StartCoroutine( play (4*numOfEnemies));
-			}else if(!wave1 && !wave2){
+			}else if(!wave2){
 				StartCoroutine( play (3*numOfEnemies));
-			}else if(!wave1 && !wave2 && !wave3){
+			}else if(!wave3){
 				StartCoroutine( play(2*numOfEnemies));
 			}else{
 				StartCoroutine( play (1*numOfEnemies));
 			}
+			wave4 = true;
+			wave1 = true;
+			wave2 = true;
+			wave3 = true;
 		}else if(wave == 5 && !wave5){
+			if(!wave1){
+				StartCoroutine( play (5*numOfEnemies));
+			}else if(!wave2){
+				StartCoroutine( play (4*numOfEnemies));
+			}else if(!wave3){
+				StartCoroutine( play(3*numOfEnemies));
+			}else if(!wave4){
+				StartCoroutine( play(2*numOfEnemies));
+			}else{
+				StartCoroutine( play (1*numOfEnemies));
+			}
 			wave5 = true;
 			wave4 = true;
 			wave1 = true;
 			wave2 = true;
 			wave3 = true;
-
-			if(!wave1){
-				StartCoroutine( play (5*numOfEnemies));
-			}else if(!wave1 && !wave2){
-				StartCoroutine( play (4*numOfEnemies));
-			}else if(!wave1 && !wave2 && !wave3){
-				StartCoroutine( play(3*numOfEnemies));
-			}else if(!wave1 && !wave2 && !wave3 && !wave4){
-				StartCoroutine( play(2*numOfEnemies));
-			}else{
-				StartCoroutine( play (1*numOfEnemies));
-			}
 		}
 		
 	}
@@ -119,7 +121,10 @@ public class PlayerController : MonoBehaviour
 		totalEnemies -= 1;
 	}
 	void checkingEnemies(){
+<<<<<<< HEAD
 		print (totalEnemies);
+=======
+>>>>>>> origin/master
 		if (totalEnemies == 0) {
 			finalWaveCompleted = true;
 		}

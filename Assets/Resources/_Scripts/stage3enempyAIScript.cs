@@ -240,7 +240,8 @@ public class stage3enempyAIScript : MonoBehaviour {
 			}
 			//Destroy(gameObject);
 			Destroy(obj.gameObject);
-//			playerscript.deleteEnemy();
+			start.playerScript.deleteEnemy();
+			start.gold += 10;
 			
 		}
 		
