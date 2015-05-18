@@ -217,7 +217,8 @@ public class enemyAI : MonoBehaviour {
 		if (tag == "Projectile") {
 			Destroy(gameObject);
 			Destroy(obj.gameObject);
-			//playerscript.deleteEnemy();
+			start.playerScript.deleteEnemy();
+			start.gold += 10;
 			
 		}
 		

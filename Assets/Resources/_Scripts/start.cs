@@ -2,8 +2,9 @@
 using System.Collections;
 
 public class start : MonoBehaviour {
-	public int gold;
-	public PlayerController playerScript;
+	public static int gold;
+	public static PlayerController playerScript;
+	public PlayerController script;
 	private GameObject house;
 	private int health;
 	private HouseScript healthScript;
@@ -17,6 +18,7 @@ public class start : MonoBehaviour {
 		healthScript = (HouseScript)house.GetComponent (typeof(HouseScript));
 		health = healthScript.getHealth ();
 		gold = 200;
+		playerScript = script;
 	}
 	
 	// Update is called once per frame
@@ -64,6 +66,10 @@ public class start : MonoBehaviour {
 			print ("new level");
 			currentLevel += 1;
 			Application.LoadLevel(currentLevel);
+		}
+		if (GUI.Button (new Rect (100, 30, 80, 20), "Menu")) {
+			print ("menu");
+
 		}
 	}
 
