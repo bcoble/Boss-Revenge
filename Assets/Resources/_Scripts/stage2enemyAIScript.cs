@@ -239,12 +239,7 @@ public class stage2enemyAIScript : MonoBehaviour {
 				start.playerScript.deleteEnemy();
 			}
 			Destroy(obj.gameObject);
-<<<<<<< HEAD
-		//	playerscript.deleteEnemy();
-=======
-			start.playerScript.deleteEnemy();
-			start.gold += 10;
->>>>>>> origin/master
+
 			
 		}
 		

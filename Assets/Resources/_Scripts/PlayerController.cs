@@ -121,10 +121,9 @@ public class PlayerController : MonoBehaviour
 		totalEnemies -= 1;
 	}
 	void checkingEnemies(){
-<<<<<<< HEAD
+
 		print (totalEnemies);
-=======
->>>>>>> origin/master
+
 		if (totalEnemies == 0) {
 			finalWaveCompleted = true;
 		}

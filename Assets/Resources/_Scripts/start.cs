@@ -2,11 +2,9 @@
 using System.Collections;
 
 public class start : MonoBehaviour {
-<<<<<<< HEAD
+
 	public int gold;
-=======
-	public static int gold;
->>>>>>> origin/master
+
 	public static PlayerController playerScript;
 	public PlayerController script;
 	private GameObject house;

@@ -226,13 +226,7 @@ public class enemyAI : MonoBehaviour {
 				start.playerScript.deleteEnemy();
 			}
 			Destroy(obj.gameObject);
-<<<<<<< HEAD
-			//	playerscript.deleteEnemy();
-=======
-			start.playerScript.deleteEnemy();
-			start.gold += 10;
->>>>>>> origin/master
-			
+
 		}
 		
 		
