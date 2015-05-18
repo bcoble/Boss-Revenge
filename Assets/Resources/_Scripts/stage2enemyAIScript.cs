@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class stage2enemyAIScript : MonoBehaviour {
-
+	
 	public GameObject enemy = null;
 	public GameObject way1;
 	public GameObject way2;
@@ -27,6 +27,7 @@ public class stage2enemyAIScript : MonoBehaviour {
 	private float x;
 	private float y;
 	private float z;
+	public PlayerController playerscript;
 	
 	
 	
@@ -211,15 +212,28 @@ public class stage2enemyAIScript : MonoBehaviour {
 		if (distance <= 5) {
 			state = State.Way14;
 		}
-	
+		
 	}void Way14(){
-			float distance = Vector3.Distance(enemy.transform.position, way14.transform.position);
-			z++; 
-			enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
-			print (distance);
-			if (distance <= 5) {
-				state = State.Idle;
-			}
+		float distance = Vector3.Distance(enemy.transform.position, way14.transform.position);
+		z++; 
+		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
+		print (distance);
+		if (distance <= 5) {
+			state = State.Idle;
+		}
+	}
+	void OnTriggerEnter(Collider obj){
+		print ("collide");
+		var name = obj.gameObject.name;
+		var tag = obj.gameObject.tag;
+		if (tag == "Projectile") {
+			Destroy(gameObject);
+			Destroy(obj.gameObject);
+			playerscript.deleteEnemy();
+			
+		}
+		
+		
 	}
 	
 	

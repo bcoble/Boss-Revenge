@@ -1,9 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\_Scripts\bulletScript.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/_Scripts/stage3enempyAIScript.cs">
     <Files>
-      <File FileName="Assets\Resources\_Scripts\start.cs" Line="23" Column="18" />
-      <File FileName="Assets\Resources\_Scripts\bulletScript.js" Line="28" Column="9" />
+      <File FileName="Assets/Resources/_Scripts/stage3enempyAIScript.cs" Line="231" Column="3" />
+      <File FileName="../../../Library/Containers/com.apple.mail/Data/Library/Mail Downloads/F1310F77-2545-436C-A729-D7A4CFA8B211/towerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Resources/_Scripts/towerScript.cs" Line="104" Column="4" />
+      <File FileName="Assets/Resources/_Scripts/bulletScript.js" Line="13" Column="47" />
+      <File FileName="Assets/Resources/_Scripts/enemyAI.cs" Line="215" Column="34" />
+      <File FileName="Assets/Resources/_Scripts/mobScript.js" Line="1" Column="1" />
+      <File FileName="Assets/_Scripts/towerupgrade.cs" Line="29" Column="34" />
+      <File FileName="Assets/Resources/_Scripts/start.cs" Line="33" Column="43" />
+      <File FileName="Assets/_Scripts/buildTower.cs" Line="27" Column="16" />
+      <File FileName="Assets/_Scripts/LoadOnClick.cs" Line="9" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

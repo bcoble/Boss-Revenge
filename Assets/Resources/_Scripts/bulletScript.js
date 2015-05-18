@@ -1,7 +1,7 @@
 ﻿#pragma strict
 
 // Public variable 
-public var speed : int = 6;
+public var speed : int = 6;// how faste bullet move in sence 
 
 // Gets called once when the bullet is created
 function Start () {  
@@ -10,7 +10,7 @@ function Start () {
 }
 
 function Update () {
-
+	transform.Translate(Vector3.forward * speed);
 }
 
 function SpaceFire(){

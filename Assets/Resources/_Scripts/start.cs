@@ -30,7 +30,7 @@ public class start : MonoBehaviour {
 	
 	void OnGUI(){
 		GUI.backgroundColor = Color.black;
-		GUI.Window (0, new Rect (450, 0, 220, 450), SideBarButtons, "Menu");
+		GUI.Window (0, new Rect (450, 0, 220, 100), SideBarButtons, "Menu");
 		if (health == 0) {
 			GUI.Window (2, new Rect (190, 200, 200, 60), GameOver, "Game Over");
 			
@@ -46,7 +46,7 @@ public class start : MonoBehaviour {
 		GUI.TextField (new Rect (10, 20, 150 , 20), "Health Points " + health);
 		GUI.TextField (new Rect (10, 50, 150, 20), "Gold Available " + gold);
 		
-		GUI.TextArea(new Rect (10, 130, 180, 250), "Information");
+	/*	GUI.TextArea(new Rect (10, 130, 180, 250), "Information");
 		
 		if (GUI.Button (new Rect (60, 90, 80, 20), "Build")) {
 			print("build");
@@ -55,7 +55,7 @@ public class start : MonoBehaviour {
 		if (GUI.Button (new Rect (60, 400, 80, 20), "Menu")) {
 			print("menu");
 		}
-		
+	*/	
 		
 	}
 

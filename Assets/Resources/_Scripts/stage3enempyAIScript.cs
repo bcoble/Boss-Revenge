@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class stage3enempyAIScript : MonoBehaviour {
-
+	
 	public GameObject enemy = null;
 	public GameObject way1;
 	public GameObject way2;
@@ -27,7 +27,7 @@ public class stage3enempyAIScript : MonoBehaviour {
 	private float x;
 	private float y;
 	private float z;
-	
+	public PlayerController playerscript;
 	
 	
 	public enum State{
@@ -221,5 +221,18 @@ public class stage3enempyAIScript : MonoBehaviour {
 			state = State.Idle;
 		}
 	}
-
+	void OnTriggerEnter(Collider obj){
+		print ("collide");
+		var name = obj.gameObject.name;
+		var tag = obj.gameObject.tag;
+		if (tag == "Projectile") {
+			Destroy(gameObject);
+			Destroy(obj.gameObject);
+//			playerscript.deleteEnemy();
+			
+		}
+		
+		
+	}
+	
 }

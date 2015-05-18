@@ -25,9 +25,10 @@ public class enemyAI : MonoBehaviour {
 	private float x;
 	private float y;
 	private float z;
-
-
-
+	public PlayerController playerscript;
+	
+	
+	
 	public enum State{
 		Idle,
 		Way1,
@@ -52,7 +53,7 @@ public class enemyAI : MonoBehaviour {
 		x = -65;
 		y = 2;
 		z = -4.5f;
-
+		
 	}
 	
 	// Update is called once per frame
@@ -102,15 +103,15 @@ public class enemyAI : MonoBehaviour {
 			break;
 			
 		}
-
-	
+		
+		
 	}
 	void Idle(){
 		healthScript.healthdec();
 		DestroyImmediate(enemy);
 	}
 	void Way1(){
-	
+		
 		float distance = Vector3.Distance(enemy.transform.position, way1.transform.position);
 		x++;
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
@@ -206,13 +207,24 @@ public class enemyAI : MonoBehaviour {
 			state = State.Idle;
 		}
 	}
-
-
-
-
-
-
-
-
-
+	
+	
+	
+	void OnTriggerEnter(Collider obj){
+		print ("collide");
+		var name = obj.gameObject.name;
+		var tag = obj.gameObject.tag;
+		if (tag == "Projectile") {
+			Destroy(gameObject);
+			Destroy(obj.gameObject);
+			//playerscript.deleteEnemy();
+			
+		}
+		
+	}
+	
+	
+	
+	
+	
 }
