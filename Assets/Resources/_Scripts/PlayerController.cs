@@ -119,7 +119,8 @@ public class PlayerController : MonoBehaviour
 		totalEnemies -= 1;
 	}
 	void checkingEnemies(){
-		if (numOfEnemies == 0) {
+		print (totalEnemies);
+		if (totalEnemies == 0) {
 			finalWaveCompleted = true;
 		}
 	}

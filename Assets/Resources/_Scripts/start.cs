@@ -3,7 +3,8 @@ using System.Collections;
 
 public class start : MonoBehaviour {
 	public int gold;
-	public PlayerController playerScript;
+	public static PlayerController playerScript;
+	public PlayerController script;
 	private GameObject house;
 	private int health;
 	private HouseScript healthScript;
@@ -17,6 +18,7 @@ public class start : MonoBehaviour {
 		healthScript = (HouseScript)house.GetComponent (typeof(HouseScript));
 		health = healthScript.getHealth ();
 		gold = 200;
+		playerScript = script;
 	}
 	
 	// Update is called once per frame

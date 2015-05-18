@@ -17,6 +17,7 @@ function SpaceFire(){
     GetComponent.<Rigidbody2D>().velocity.x = speed;
 }
 
+
 // Gets called when the object goes out of the screen
 function OnBecameInvisible() {  
     // Destroy the bullet 

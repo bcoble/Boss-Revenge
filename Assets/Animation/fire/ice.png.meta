@@ -1,9 +1,10 @@
 fileFormatVersion: 2
 guid: 7ddb0a99d71ac40c0af768b43047e489
-timeCreated: 1431911240
+timeCreated: 1431928702
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: ice_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -37,18 +38,28 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: .5, y: .5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 50
+  alignment: 9
+  spritePivot: {x: 1, y: 1}
+  spriteBorder: {x: 141, y: 32, z: 46, w: 29}
+  spritePixelsToUnits: 20
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: ice_0
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 34
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

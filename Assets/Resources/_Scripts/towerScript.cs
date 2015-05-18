@@ -10,6 +10,7 @@ public class towerScript : MonoBehaviour {
 	public int targetAquisitionDelay;
 	public int bulletSpeed;
 	public int count;
+	private float mDistance = 10f;
 	
 	// Use this for initialization
 	void Start () {
@@ -57,9 +58,24 @@ public class towerScript : MonoBehaviour {
 		if(array == null || array.Length == 0){
 			return null;
 		} else {
-			return array[0];
+			if (DistanceDetection(array[0]))
+				return array[0];
+			else
+				return null;
 		}
 		
+	}
+
+	bool DistanceDetection(GameObject t){
+		Vector3 tPos = t.transform.position;
+		Vector3 bPos = this.transform.position;
+		float x_delta = tPos.x - bPos.x;
+		float y_delta = tPos.y - bPos.y;
+		print (Mathf.Sqrt (x_delta * x_delta + y_delta * y_delta));
+		if (Mathf.Sqrt (x_delta * x_delta + y_delta * y_delta) <= this.mDistance)
+			return true;
+		else 
+			return false;
 	}
 	
 	// Shoots a projectile at a target
@@ -76,9 +92,11 @@ public class towerScript : MonoBehaviour {
 		//print(diffY);
 		GameObject g;
 		
-		g = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;
+		g = Instantiate(bullet, transform.position,Quaternion.Euler(90,0,0)) as GameObject;
 		
 		g.tag = "Projectile";
+
+		//g.GetComponentInChildren<Bullet> ().SetTarget (t);
 		
 		g.transform.rotation = Quaternion.Euler(90, 0, 0);
 		g.transform.LookAt(t.transform);

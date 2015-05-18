@@ -1,5 +1,7 @@
 ﻿#pragma strict
 
+var health = 100;
+
 function Start () {
 
 }
@@ -24,6 +26,7 @@ function OnTriggerEnter2D(obj : Collider2D) {
     // }
 
  	if (tag == "Projectile"){
+ 		health -= 50;
  		Destroy(gameObject);
  		Destroy(obj.gameObject);
  	}

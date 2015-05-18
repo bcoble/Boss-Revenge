@@ -28,6 +28,10 @@ public class stage3enempyAIScript : MonoBehaviour {
 	private float y;
 	private float z;
 	public PlayerController playerscript;
+
+	private start global;
+	
+	private float health = 100f;
 	
 	
 	public enum State{
@@ -55,6 +59,7 @@ public class stage3enempyAIScript : MonoBehaviour {
 		x = -65;
 		y = 2;
 		z = -4.5f;
+		this.global = GameObject.FindObjectOfType<start> ();
 		
 	}
 	
@@ -226,7 +231,14 @@ public class stage3enempyAIScript : MonoBehaviour {
 		var name = obj.gameObject.name;
 		var tag = obj.gameObject.tag;
 		if (tag == "Projectile") {
-			Destroy(gameObject);
+			this.health = this.health - 25f;
+			print (this.health);
+			if (this.health <= 0){
+				this.global.gold += 100;
+				Destroy(gameObject);
+				start.playerScript.deleteEnemy();
+			}
+			//Destroy(gameObject);
 			Destroy(obj.gameObject);
 //			playerscript.deleteEnemy();
 			
