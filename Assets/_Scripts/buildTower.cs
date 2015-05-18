@@ -20,6 +20,7 @@ public class buildTower : MonoBehaviour {
 				GameObject obj =Instantiate(prefab,new Vector3( hit.point.x,hit.point.y,hit.point.z),Quaternion.Euler(90,0,0)) as GameObject;
 				obj.SetActive(true);
 				build=false;
+				start.gold -= 100;
 			}
 		}
 	}
