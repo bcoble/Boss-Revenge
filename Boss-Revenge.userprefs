@@ -1,16 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/_Scripts/PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Scripts/popup.cs">
     <Files>
-      <File FileName="Assets/Resources/_Scripts/PlayerController.cs" Line="122" Column="24" />
-      <File FileName="Assets/Resources/_Scripts/Bullet.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/_Scripts/start.cs" Line="21" Column="25" />
-      <File FileName="Assets/Resources/_Scripts/stage2enemyAIScript.cs" Line="239" Column="38" />
-      <File FileName="Assets/Resources/_Scripts/towerScript.cs" Line="96" Column="3" />
-      <File FileName="Assets/Resources/_Scripts/enemyAI.cs" Line="226" Column="5" />
-      <File FileName="Assets/Resources/_Scripts/stage3enempyAIScript.cs" Line="239" Column="38" />
+      <File FileName="Assets/Resources/_Scripts/start.cs" Line="1" Column="1" />
+      <File FileName="Assets/Resources/_Scripts/enemyAI.cs" Line="59" Column="55" />
+      <File FileName="Assets/Resources/_Scripts/stage3enempyAIScript.cs" Line="1" Column="1" />
       <File FileName="Assets/_Scripts/buildTower.cs" Line="1" Column="1" />
       <File FileName="Assets/Resources/_Scripts/bulletScript.js" Line="1" Column="1" />
+      <File FileName="Assets/_Scripts/buildTI.cs" Line="30" Column="3" />
+      <File FileName="Assets/_Scripts/buildTF.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Scripts/buildTP.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Scripts/selltower.cs" Line="36" Column="6" />
+      <File FileName="Assets/Standard Assets/Utility/SmoothFollow.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Scripts/popup.cs" Line="23" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

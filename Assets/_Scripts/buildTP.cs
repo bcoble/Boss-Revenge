@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class buildTower : MonoBehaviour {
+public class buildTP: MonoBehaviour {
 	public GameObject prefab;
 	public bool build;
 	private start global;
@@ -14,22 +14,21 @@ public class buildTower : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-
-		if ((Physics.Raycast (ray, out hit)&&build)&&(global.gold>=50)) {
+		
+		if ((Physics.Raycast (ray, out hit)&&build)&&(global.gold>=100)) {
 			if (Input.GetKey(KeyCode.Mouse0))
 			{
 				GameObject obj =Instantiate(prefab,new Vector3( hit.point.x,hit.point.y,hit.point.z),Quaternion.Euler(90,0,0)) as GameObject;
 				obj.SetActive(true);
-				global.gold-=50;
+				global.gold-=100;
 				build=false;
 			}
 		}
 	}
-	public void buildTB(){
+	
+	public void buildnewTP(){
 		build = true;
 	}
-
-
-
-
+	
+	
 }

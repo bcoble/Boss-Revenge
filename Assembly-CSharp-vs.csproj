@@ -57,9 +57,13 @@
      <Compile Include="Assets\_Scripts\Enemy.cs" />
      <Compile Include="Assets\_Scripts\LoadHomePage.cs" />
      <Compile Include="Assets\_Scripts\LoadOnClick.cs" />
+     <Compile Include="Assets\_Scripts\buildTF.cs" />
+     <Compile Include="Assets\_Scripts\buildTI.cs" />
+     <Compile Include="Assets\_Scripts\buildTP.cs" />
      <Compile Include="Assets\_Scripts\buildTower.cs" />
      <Compile Include="Assets\_Scripts\enemyLib.cs" />
      <Compile Include="Assets\_Scripts\popup.cs" />
+     <Compile Include="Assets\_Scripts\selltower.cs" />
      <Compile Include="Assets\_Scripts\towerupgrade.cs" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />

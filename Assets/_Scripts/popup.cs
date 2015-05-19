@@ -28,11 +28,8 @@ public class popup : MonoBehaviour {
 	}
 	public void GetButton(int buttonName){
 
-		hp.text= "Hp: ";
-		Damage.text= "Damage: "  + buttonName;
-		Amor.text= "Amor: "  + buttonName;
-		resist.text= "Resist: "  + buttonName;
-		speed.text= "Speed: "  + buttonName;
+		hp.text= "Hp: 100" ;
+		speed.text= "Speed: 4" ;
 		Update ();
 
 	}
