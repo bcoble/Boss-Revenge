@@ -28,8 +28,8 @@ public class stage2enemyAIScript : MonoBehaviour {
 	private float y;
 	private float z;
 	public PlayerController playerscript;
-	private start global;
-
+	private start3 global;
+	bool facingRight=false;
 	private float health = 100f;
 
 	
@@ -60,7 +60,7 @@ public class stage2enemyAIScript : MonoBehaviour {
 		x = -65;
 		y = 2;
 		z = -4.5f;
-		this.global = GameObject.FindObjectOfType<start> ();
+		this.global = GameObject.FindObjectOfType<start3> ();
 	}
 	
 	// Update is called once per frame
@@ -151,6 +151,7 @@ public class stage2enemyAIScript : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <=5) {
 			state = State.Way5;
+			Flip();
 		}
 	}void Way5(){
 		float distance = Vector3.Distance(enemy.transform.position, way5.transform.position);
@@ -165,6 +166,7 @@ public class stage2enemyAIScript : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <=5) {
 			state = State.Way7;
+			Flip();
 		}
 	}void Way7(){
 		float distance = Vector3.Distance(enemy.transform.position, way7.transform.position);
@@ -236,7 +238,7 @@ public class stage2enemyAIScript : MonoBehaviour {
 			if (this.health <= 0){
 				this.global.gold += 50;
 				Destroy(gameObject);
-				start.playerScript.deleteEnemy();
+			//	start.playerScript.deleteEnemy();
 			}
 			Destroy(obj.gameObject);
 
@@ -245,6 +247,15 @@ public class stage2enemyAIScript : MonoBehaviour {
 		
 		
 	}
+	void Flip()
+	{
+		facingRight = !facingRight;
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+		
+	}
+
 	
 	
 }

@@ -4,12 +4,12 @@ using System.Collections;
 public class buildTF : MonoBehaviour {
 	public GameObject prefab;
 	public bool build;
-	private start global;
+	private start3 global;
 	Ray ray;
 	RaycastHit hit;
 	// Use this for initialization
 	void Start () {
-		this.global = GameObject.FindObjectOfType<start> ();
+		this.global = GameObject.FindObjectOfType<start3> ();
 	}
 	// Update is called once per frame
 	void Update () {

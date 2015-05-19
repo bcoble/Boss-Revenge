@@ -3,12 +3,12 @@ using UnityEngine.UI;
 using System.Collections;
 public class selltower : MonoBehaviour {
 	public bool wasClicked;
-	private start global;
+	private start3 global;
 	Ray ray;
 	RaycastHit hit;
 	// Use this for initialization
 	void Start () {
-		this.global = GameObject.FindObjectOfType<start> ();
+		this.global = GameObject.FindObjectOfType<start3> ();
 	}
 	
 	

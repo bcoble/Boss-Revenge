@@ -26,8 +26,8 @@ public class enemyAI : MonoBehaviour {
 	private float y;
 	private float z;
 	public PlayerController playerscript;
-	private start global;
-	
+	private start3 global;
+	bool facingRight=false;
 	private float health = 100f;
 
 	
@@ -56,7 +56,7 @@ public class enemyAI : MonoBehaviour {
 		x = -65;
 		y = 2;
 		z = -4.5f;
-		this.global = GameObject.FindObjectOfType<start> ();
+		this.global = GameObject.FindObjectOfType<start3> ();
 	}
 	
 	// Update is called once per frame
@@ -120,6 +120,8 @@ public class enemyAI : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <= 5) {
 			state = State.Way2;
+		
+
 		}
 	}
 	void Way2(){
@@ -128,6 +130,7 @@ public class enemyAI : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <=4) {
 			state = State.Way3;
+
 		}
 	}
 	void Way3(){
@@ -136,6 +139,7 @@ public class enemyAI : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <=5) {
 			state = State.Way4;
+
 		}
 	}
 	void Way4(){
@@ -144,6 +148,7 @@ public class enemyAI : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <=5) {
 			state = State.Way5;
+			Flip();
 		}
 	}void Way5(){
 		float distance = Vector3.Distance(enemy.transform.position, way5.transform.position);
@@ -151,6 +156,7 @@ public class enemyAI : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <=5) {
 			state = State.Way6;
+
 		}
 	}void Way6(){
 		float distance = Vector3.Distance(enemy.transform.position, way6.transform.position);
@@ -158,6 +164,7 @@ public class enemyAI : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <=5) {
 			state = State.Way7;
+			Flip();
 		}
 	}void Way7(){
 		float distance = Vector3.Distance(enemy.transform.position, way7.transform.position);
@@ -165,6 +172,7 @@ public class enemyAI : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <=5) {
 			state = State.Way8;
+			Flip();
 		}
 	}void Way8(){
 		float distance = Vector3.Distance(enemy.transform.position, way8.transform.position);
@@ -223,7 +231,7 @@ public class enemyAI : MonoBehaviour {
 			if (this.health <= 0){
 				this.global.gold += 20;
 				Destroy(gameObject);
-				start.playerScript.deleteEnemy();
+				start3.playerScript.deleteEnemy();
 			}
 			Destroy(obj.gameObject);
 
@@ -231,6 +239,16 @@ public class enemyAI : MonoBehaviour {
 		
 		
 	}
+	void Flip()
+	{
+		facingRight = !facingRight;
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+		
+	}
+	
+
 	
 	
 	

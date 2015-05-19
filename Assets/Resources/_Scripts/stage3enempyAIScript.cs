@@ -29,8 +29,8 @@ public class stage3enempyAIScript : MonoBehaviour {
 	private float z;
 	public PlayerController playerscript;
 
-	private start global;
-	
+	private start3 global;
+	bool facingRight=false;
 	private float health = 100f;
 	
 	
@@ -59,7 +59,7 @@ public class stage3enempyAIScript : MonoBehaviour {
 		x = -65;
 		y = 2;
 		z = -4.5f;
-		this.global = GameObject.FindObjectOfType<start> ();
+		this.global = GameObject.FindObjectOfType<start3> ();
 		
 	}
 	
@@ -135,6 +135,7 @@ public class stage3enempyAIScript : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <=4) {
 			state = State.Way3;
+			Flip();
 		}
 	}
 	void Way3(){
@@ -143,6 +144,7 @@ public class stage3enempyAIScript : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <=5) {
 			state = State.Way4;
+			Flip();
 		}
 	}
 	void Way4(){
@@ -158,6 +160,7 @@ public class stage3enempyAIScript : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <=5) {
 			state = State.Way6;
+			Flip();
 		}
 	}void Way6(){
 		float distance = Vector3.Distance(enemy.transform.position, way6.transform.position);
@@ -165,6 +168,7 @@ public class stage3enempyAIScript : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <=5) {
 			state = State.Way7;
+
 		}
 	}void Way7(){
 		float distance = Vector3.Distance(enemy.transform.position, way7.transform.position);
@@ -172,6 +176,7 @@ public class stage3enempyAIScript : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <=5) {
 			state = State.Way8;
+
 		}
 	}void Way8(){
 		float distance = Vector3.Distance(enemy.transform.position, way8.transform.position);
@@ -179,6 +184,7 @@ public class stage3enempyAIScript : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <=5) {
 			state = State.Way9;
+			Flip();
 		}
 	}void Way9(){
 		float distance = Vector3.Distance(enemy.transform.position, way9.transform.position);
@@ -186,6 +192,7 @@ public class stage3enempyAIScript : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <=5) {
 			state = State.Way10;
+			Flip();
 		}
 	}void Way10(){
 		float distance = Vector3.Distance(enemy.transform.position, way10.transform.position);
@@ -200,6 +207,7 @@ public class stage3enempyAIScript : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <=5) {
 			state = State.Way12;
+			Flip();
 		}
 	}void Way12(){
 		float distance = Vector3.Distance(enemy.transform.position, way12.transform.position);
@@ -207,6 +215,7 @@ public class stage3enempyAIScript : MonoBehaviour {
 		enemy.GetComponent<Rigidbody> ().position = new Vector3 (x, y, z);
 		if (distance <=5) {
 			state = State.Way13;
+
 		}
 	}void Way13(){
 		float distance = Vector3.Distance (enemy.transform.position, way13.transform.position);
@@ -244,7 +253,20 @@ public class stage3enempyAIScript : MonoBehaviour {
 			
 		}
 		
+
+
+
+	}
+
+
+	void Flip()
+	{
+		facingRight = !facingRight;
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
 		
 	}
+
 	
 }
