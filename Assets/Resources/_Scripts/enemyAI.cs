@@ -236,8 +236,26 @@ public class enemyAI : MonoBehaviour {
 			}
 			Destroy(obj.gameObject);
 		}
-	  if (tag == "Sbullet") {
+	  	if (tag == "Sbullet") {
 			this.health = this.health - 100f;
+			if (this.health <= 0){
+				this.global.gold += 20;
+				Destroy(gameObject);
+				start3.playerScript.deleteEnemy();
+			}
+			Destroy(obj.gameObject);
+		}
+		if (tag == "IceBullet") {
+			this.health = this.health - 300f;
+			if (this.health <= 0){
+				this.global.gold += 20;
+				Destroy(gameObject);
+				start3.playerScript.deleteEnemy();
+			}
+			Destroy(obj.gameObject);
+		}
+		if (tag == "FireBullet") {
+			this.health = this.health - 25f;
 			if (this.health <= 0){
 				this.global.gold += 20;
 				Destroy(gameObject);

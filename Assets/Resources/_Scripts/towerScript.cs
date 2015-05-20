@@ -7,15 +7,17 @@ public class towerScript : MonoBehaviour {
 	
 	public GameObject bullet;
 	public GameObject target;
-	public int targetAquisitionDelay;
-	public int bulletSpeed;
+	public int targetAquisitionDelay, tad;
+	public int bulletSpeed, bs;
 	public int count;
-	private float mDistance = 20f;
+	public float mDistance = 20f;
 	
 	// Use this for initialization
 	void Start () {
-		targetAquisitionDelay = 30;
-		bulletSpeed = 10;
+		//targetAquisitionDelay = 30;
+		//bulletSpeed = 10;
+		bulletSpeed = bs;
+		targetAquisitionDelay = tad;
 		count = 0;
 		target = null;
 	}
