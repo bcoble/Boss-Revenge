@@ -246,7 +246,7 @@ public class enemyAI : MonoBehaviour {
 			Destroy(obj.gameObject);
 		}
 		if (tag == "IceBullet") {
-			this.health = this.health - 300f;
+			this.health = this.health - 75f;
 			if (this.health <= 0){
 				this.global.gold += 20;
 				Destroy(gameObject);

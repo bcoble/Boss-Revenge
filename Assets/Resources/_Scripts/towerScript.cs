@@ -96,8 +96,6 @@ public class towerScript : MonoBehaviour {
 		GameObject g;
 		
 		g = Instantiate(bullet, new Vector3(transform.position.x,4,transform.position.z),Quaternion.Euler(90,0,0)) as GameObject;
-		
-
 
 		//g.GetComponentInChildren<Bullet> ().SetTarget (t);
 		
@@ -106,6 +104,21 @@ public class towerScript : MonoBehaviour {
 		
 		//g.transform.Rotate(Vector3.forward * angle); //- fix this
 		g.GetComponent<Rigidbody>().transform.Translate(Vector3.forward * bulletSpeed);
+
+		if(tag == "TowerIce"){
+			GameObject gl, gr;
+
+			gl = Instantiate(bullet, new Vector3(transform.position.x,4,transform.position.z),Quaternion.Euler(90,0,0)) as GameObject;			
+			gl.transform.LookAt(t.transform);
+			//gl.transform.rotation = Quaternion.Euler(90, 0, 0);
+			gl.GetComponent<Rigidbody>().transform.Translate(Vector3.left * bulletSpeed);
+
+			gr = Instantiate(bullet, new Vector3(transform.position.x,4,transform.position.z),Quaternion.Euler(90,0,0)) as GameObject;			
+			gr.transform.LookAt(t.transform);
+			//gl.transform.rotation = Quaternion.Euler(90, 0, 0);
+			gr.GetComponent<Rigidbody>().transform.Translate(Vector3.right * bulletSpeed);
+
+		}
 	}
 	
 	int ByDistance(GameObject a, GameObject b){
