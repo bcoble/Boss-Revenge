@@ -233,27 +233,42 @@ public class stage2enemyAIScript : MonoBehaviour {
 		var name = obj.gameObject.name;
 		var tag = obj.gameObject.tag;
 		if (tag == "Projectile") {
-			this.health = this.health - 15f;
+			this.health = this.health - 5f;
 			print (this.health);
 			if (this.health <= 0){
-				this.global.gold += 40;
+				this.global.gold += 20;
 				Destroy(gameObject);
 			//	start.playerScript.deleteEnemy();
 			}
 			Destroy(obj.gameObject);
 		}
-		else  if (tag == "Sbullet") {
-			this.health = this.health - 50f;
-			print (this.health);
+		if (tag == "Sbullet") {
+			this.health = this.health -70f;
 			if (this.health <= 0){
-				this.global.gold += 50;
+				this.global.gold += 20;
 				Destroy(gameObject);
 				start3.playerScript.deleteEnemy();
 			}
 			Destroy(obj.gameObject);
 		}
-
-		
+		if (tag == "IceBullet") {
+			this.health = this.health - 55f;
+			if (this.health <= 0){
+				this.global.gold += 20;
+				Destroy(gameObject);
+				start3.playerScript.deleteEnemy();
+			}
+			Destroy(obj.gameObject);
+		}
+		if (tag == "FireBullet") {
+			this.health = this.health - 10f;
+			if (this.health <= 0){
+				this.global.gold += 20;
+				Destroy(gameObject);
+				start3.playerScript.deleteEnemy();
+			}
+			Destroy(obj.gameObject);
+		}
 		
 	}
 	void Flip()

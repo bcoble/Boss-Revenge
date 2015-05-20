@@ -36,11 +36,11 @@ public class start : MonoBehaviour {
 		GUI.backgroundColor = Color.black;
 		GUI.Window (0, new Rect (450, 0, 220, 100), SideBarButtons, "Menu");
 		if (health == 0) {
-			GUI.Window (2, new Rect (190, 200, 200, 60), GameOver, "Game Over");
+			GUI.Window (2, new Rect (900, 200, 200, 60), GameOver, "Game Over");
 			
 		}
 		if (playerScript.finalWaveCompleted) {
-			GUI.Window (3, new Rect (190, 200, 200, 60), newLevel, "Level" +currentLevel+ " Finished");
+			GUI.Window (3, new Rect (900, 200, 200, 60), newLevel, "Level" +currentLevel+ " Finished");
 		}
 		GUI.Window (1, new Rect (0, 0, 450, 50), WaveButtons, "Waves");
 
@@ -64,8 +64,8 @@ public class start : MonoBehaviour {
 	}
 
 	void newLevel(int windowID){
-		if (GUI.Button (new Rect (10, 30, 80, 20), "Next Level!")) {
-			print ("new level");
+		if (GUI.Button (new Rect (60, 30, 80, 20), "Next Level!")) {
+			//print ("new level");
 			currentLevel += 1;
 			Application.LoadLevel("HomePage");
 		}
@@ -73,7 +73,7 @@ public class start : MonoBehaviour {
 
 	void GameOver(int windowID) {
 		if (GUI.Button (new Rect (10, 30, 80, 20), "Restart!")) {
-			print ("restart");
+			//print ("restart");
 			Application.LoadLevel("HomePage");
 		}
 		if (GUI.Button (new Rect (100, 30, 80, 20), "Quit!")) {

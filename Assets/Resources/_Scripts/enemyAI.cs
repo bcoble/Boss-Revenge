@@ -227,10 +227,10 @@ public class enemyAI : MonoBehaviour {
 		var tag = obj.gameObject.tag;
 
 		if (tag == "Projectile") {
-			this.health = this.health - 20f;
+			this.health = this.health - 10f;
 			print (this.health);
 			if (this.health <= 0){
-				this.global.gold += 30;
+				this.global.gold += 10;
 				Destroy(gameObject);
 				start3.playerScript.deleteEnemy();
 			}
@@ -239,25 +239,25 @@ public class enemyAI : MonoBehaviour {
 	  	if (tag == "Sbullet") {
 			this.health = this.health - 100f;
 			if (this.health <= 0){
-				this.global.gold += 20;
+				this.global.gold += 10;
 				Destroy(gameObject);
 				start3.playerScript.deleteEnemy();
 			}
 			Destroy(obj.gameObject);
 		}
 		if (tag == "IceBullet") {
-			this.health = this.health - 75f;
+			this.health = this.health - 65f;
 			if (this.health <= 0){
-				this.global.gold += 20;
+				this.global.gold += 10;
 				Destroy(gameObject);
 				start3.playerScript.deleteEnemy();
 			}
 			Destroy(obj.gameObject);
 		}
 		if (tag == "FireBullet") {
-			this.health = this.health - 25f;
+			this.health = this.health - 15f;
 			if (this.health <= 0){
-				this.global.gold += 20;
+				this.global.gold += 10;
 				Destroy(gameObject);
 				start3.playerScript.deleteEnemy();
 			}

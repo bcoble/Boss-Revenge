@@ -240,27 +240,43 @@ public class stage3enempyAIScript : MonoBehaviour {
 		var name = obj.gameObject.name;
 		var tag = obj.gameObject.tag;
 		if (tag == "Projectile") {
-			this.health = this.health - 10f;
+			this.health = this.health - 5f;
 			print (this.health);
 			if (this.health <= 0){
-				this.global.gold += 50;
+				this.global.gold += 30;
 				Destroy(gameObject);
 			//	start3.playerScript.deleteEnemy();
 			}
 			//Destroy(gameObject);
 			Destroy(obj.gameObject);
 		}
-		else  if (tag == "Sbullet") {
-			this.health = this.health - 34f;
-			print (this.health);
+		if (tag == "Sbullet") {
+			this.health = this.health - 50f;
 			if (this.health <= 0){
-				this.global.gold += 100;
+				this.global.gold += 30;
 				Destroy(gameObject);
-			//	start3.playerScript.deleteEnemy();
+				start3.playerScript.deleteEnemy();
 			}
 			Destroy(obj.gameObject);
 		}
-
+		if (tag == "IceBullet") {
+			this.health = this.health - 35f;
+			if (this.health <= 0){
+				this.global.gold += 30;
+				Destroy(gameObject);
+				start3.playerScript.deleteEnemy();
+			}
+			Destroy(obj.gameObject);
+		}
+		if (tag == "FireBullet") {
+			this.health = this.health - 10f;
+			if (this.health <= 0){
+				this.global.gold += 30;
+				Destroy(gameObject);
+				start3.playerScript.deleteEnemy();
+			}
+			Destroy(obj.gameObject);
+		}
 
 
 

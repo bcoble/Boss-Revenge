@@ -62,8 +62,8 @@ public class start3 : MonoBehaviour {
 	}
 	
 	void newLevel(int windowID){
-		if (GUI.Button (new Rect (10, 30, 80, 20), "Next Level!")) {
-			print ("new level");
+		if (GUI.Button (new Rect (60, 30, 80, 20), "Next Level!")) {
+			//print ("new level");
 			currentLevel += 1;
 			Application.LoadLevel("HomePage");
 		}
@@ -72,7 +72,7 @@ public class start3 : MonoBehaviour {
 	
 	void GameOver(int windowID) {
 		if (GUI.Button (new Rect (10, 30, 80, 20), "Restart!")) {
-			print ("restart");
+			//print ("restart");
 			Application.LoadLevel("HomePage");
 		}
 		if (GUI.Button (new Rect (100, 30, 80, 20), "Quit!")) {
