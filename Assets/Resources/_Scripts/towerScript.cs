@@ -10,7 +10,7 @@ public class towerScript : MonoBehaviour {
 	public int targetAquisitionDelay;
 	public int bulletSpeed;
 	public int count;
-	private float mDistance = 10f;
+	private float mDistance = 20f;
 	
 	// Use this for initialization
 	void Start () {
@@ -62,6 +62,7 @@ public class towerScript : MonoBehaviour {
 				return array[0];
 			else
 				return null;
+
 		}
 		
 	}
@@ -92,9 +93,9 @@ public class towerScript : MonoBehaviour {
 		//print(diffY);
 		GameObject g;
 		
-		g = Instantiate(bullet, transform.position,Quaternion.Euler(90,0,0)) as GameObject;
+		g = Instantiate(bullet, new Vector3(transform.position.x,4,transform.position.z),Quaternion.Euler(90,0,0)) as GameObject;
 		
-		g.tag = "Projectile";
+
 
 		//g.GetComponentInChildren<Bullet> ().SetTarget (t);
 		

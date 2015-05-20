@@ -25,8 +25,8 @@ public class Bullet : MonoBehaviour {
 			float y_delta = tPos.y - bPos.y;
 			float x_speed = this.speed * Mathf.Atan (x_delta / y_delta);
 			float y_speed = this.speed * (Mathf.PI / 4 - Mathf.Atan (x_delta / y_delta));
-			//this.transform.Rotate (new Vector3 (x_delta, 0, y_delta));
-			//this.transform.Translate(Vector3.forward * speed);
+			this.transform.Rotate (new Vector3 (x_delta, 0, y_delta));
+			this.transform.Translate(Vector3.forward * speed);
 			this.transform.Translate (new Vector3 (x_speed, 0, y_speed));
 			this.transform.Rotate(new Vector3 (0,0,0));
 		}

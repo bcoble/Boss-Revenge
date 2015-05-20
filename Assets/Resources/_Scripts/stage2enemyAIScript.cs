@@ -241,9 +241,18 @@ public class stage2enemyAIScript : MonoBehaviour {
 			//	start.playerScript.deleteEnemy();
 			}
 			Destroy(obj.gameObject);
-
-			
 		}
+		else  if (tag == "Sbullet") {
+			this.health = this.health - 50f;
+			print (this.health);
+			if (this.health <= 0){
+				this.global.gold += 50;
+				Destroy(gameObject);
+				start3.playerScript.deleteEnemy();
+			}
+			Destroy(obj.gameObject);
+		}
+
 		
 		
 	}

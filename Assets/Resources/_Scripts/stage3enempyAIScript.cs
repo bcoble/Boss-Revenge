@@ -245,14 +245,22 @@ public class stage3enempyAIScript : MonoBehaviour {
 			if (this.health <= 0){
 				this.global.gold += 100;
 				Destroy(gameObject);
-				start.playerScript.deleteEnemy();
+			//	start3.playerScript.deleteEnemy();
 			}
 			//Destroy(gameObject);
 			Destroy(obj.gameObject);
-		
-			
 		}
-		
+		else  if (tag == "Sbullet") {
+			this.health = this.health - 34f;
+			print (this.health);
+			if (this.health <= 0){
+				this.global.gold += 100;
+				Destroy(gameObject);
+			//	start3.playerScript.deleteEnemy();
+			}
+			Destroy(obj.gameObject);
+		}
+
 
 
 

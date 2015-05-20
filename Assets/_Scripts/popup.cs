@@ -27,10 +27,21 @@ public class popup : MonoBehaviour {
 
 	}
 	public void GetButton(int buttonName){
+		if (buttonName < 3) {
 
-		hp.text= "Hp: 100" ;
-		speed.text= "Speed: 4" ;
-		Update ();
-
+			hp.text = "Hp: 100";
+			speed.text = "Moving Speed: 4";
+			Update ();
+		}
+		else if (buttonName > 3 && buttonName < 6) {
+			
+			hp.text = "Hp: 200";
+			speed.text = "Moving Speed: 4";
+			Update ();
+		} else {
+			hp.text = "Hp: 300";
+			speed.text = "Moving Speed: 6";
+			Update ();
+		}
 	}
 }

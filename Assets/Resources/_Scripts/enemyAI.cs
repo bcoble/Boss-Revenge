@@ -225,6 +225,7 @@ public class enemyAI : MonoBehaviour {
 		print ("collide");
 		var name = obj.gameObject.name;
 		var tag = obj.gameObject.tag;
+
 		if (tag == "Projectile") {
 			this.health = this.health - 50f;
 			print (this.health);
@@ -234,8 +235,17 @@ public class enemyAI : MonoBehaviour {
 				start3.playerScript.deleteEnemy();
 			}
 			Destroy(obj.gameObject);
-
 		}
+	  if (tag == "Sbullet") {
+			this.health = this.health - 100f;
+			if (this.health <= 0){
+				this.global.gold += 20;
+				Destroy(gameObject);
+				start3.playerScript.deleteEnemy();
+			}
+			Destroy(obj.gameObject);
+		}
+
 		
 		
 	}
