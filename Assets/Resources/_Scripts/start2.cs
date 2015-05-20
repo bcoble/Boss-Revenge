@@ -65,18 +65,14 @@ public class start2 : MonoBehaviour {
 		if (GUI.Button (new Rect (10, 30, 80, 20), "Next Level!")) {
 			print ("new level");
 			currentLevel += 1;
-			Application.LoadLevel(currentLevel);
-		}
-		if (GUI.Button (new Rect (100, 30, 80, 20), "Menu")) {
-			print ("menu");
-			
+			Application.LoadLevel("HomePage");
 		}
 	}
 	
 	void GameOver(int windowID) {
 		if (GUI.Button (new Rect (10, 30, 80, 20), "Restart!")) {
 			print ("restart");
-			Application.LoadLevel(currentLevel);
+			Application.LoadLevel("HomePage");
 		}
 		if (GUI.Button (new Rect (100, 30, 80, 20), "Quit!")) {
 			print ("quit");

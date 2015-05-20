@@ -22,7 +22,7 @@ public class PlayerController3 : MonoBehaviour
 	
 	public void Start ()
 	{
-		totalEnemies = 50;
+		totalEnemies = 150;
 		waveSelected = false;
 		wave1 = false;
 		wave2 = false;

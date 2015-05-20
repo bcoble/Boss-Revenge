@@ -6,8 +6,12 @@ public class LoadHomePage : MonoBehaviour {
 	
 	public void LoadScene(int Scene) 
 	{	
-		loadingImage.SetActive (true);
-		Application.LoadLevel (Scene);
+	
+			loadingImage.SetActive (true);
+			Application.LoadLevel (Scene);
+	}
+	public void StopAllCoroutines(){
+		Application.Quit ();
 	}
 	// Use this for initialization
 	void Start () {
