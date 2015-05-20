@@ -227,10 +227,10 @@ public class enemyAI : MonoBehaviour {
 		var tag = obj.gameObject.tag;
 
 		if (tag == "Projectile") {
-			this.health = this.health - 50f;
+			this.health = this.health - 20f;
 			print (this.health);
 			if (this.health <= 0){
-				this.global.gold += 20;
+				this.global.gold += 30;
 				Destroy(gameObject);
 				start3.playerScript.deleteEnemy();
 			}

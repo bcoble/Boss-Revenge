@@ -233,10 +233,10 @@ public class stage2enemyAIScript : MonoBehaviour {
 		var name = obj.gameObject.name;
 		var tag = obj.gameObject.tag;
 		if (tag == "Projectile") {
-			this.health = this.health - 34f;
+			this.health = this.health - 15f;
 			print (this.health);
 			if (this.health <= 0){
-				this.global.gold += 50;
+				this.global.gold += 40;
 				Destroy(gameObject);
 			//	start.playerScript.deleteEnemy();
 			}

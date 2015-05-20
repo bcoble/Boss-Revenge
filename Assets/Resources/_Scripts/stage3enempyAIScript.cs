@@ -240,10 +240,10 @@ public class stage3enempyAIScript : MonoBehaviour {
 		var name = obj.gameObject.name;
 		var tag = obj.gameObject.tag;
 		if (tag == "Projectile") {
-			this.health = this.health - 25f;
+			this.health = this.health - 10f;
 			print (this.health);
 			if (this.health <= 0){
-				this.global.gold += 100;
+				this.global.gold += 50;
 				Destroy(gameObject);
 			//	start3.playerScript.deleteEnemy();
 			}
